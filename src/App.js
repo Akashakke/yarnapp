@@ -1,15 +1,23 @@
-import React from 'react';
+import "./App.css";
+import Header from "./components/Header";
+import { BrowserRouter, Route } from "react-router-dom";
+import Home from "./components/Home";
+import Cart from "./components/Cart";
 
 function App() {
-  return (<div class="card" style="width: 18rem;">
-  <div class="card-body">
-    <h5 class="card-title">Card title</h5>
-    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-    <a href="#" class="btn btn-primary">Go somewhere</a>
-  </div>
-</div>
+  return (
+    <BrowserRouter>
+      <Header />
+      <div className="App">
+        <Route path="/" exact>
+          <Home />
+        </Route>
+        <Route path="/cart">
+          <Cart />
+        </Route>
+      </div>
+    </BrowserRouter>
   );
 }
-
 
 export default App;
